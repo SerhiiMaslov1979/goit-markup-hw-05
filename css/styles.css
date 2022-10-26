@@ -354,6 +354,57 @@ img {
   color: var(--accent2-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
+/*-------------------modal-window----------------------------*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.5);
+  transition: opacity 250ms linear, visibility 250ms linear;
+}
+.backdrop.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* transition: transform 250ms linear; */
+  border-radius: 5px;
+  width: 528px;
+  height: 581px;
+  background-color: #fff;
+}
+.modal-close {
+  outline: 1px solid teal;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal-close-icon {
+  /* display: inline-block; */
+  width: 100%;
+  height: 100%;
+  /* margin-left: 0;
+  align-items: center;
+  justify-content: center; */
+}
+
 /*-----------------section-feature-----------*/
 .feature-list {
   display: flex;
@@ -609,10 +660,7 @@ img {
 
 /*-----------------------Hover на картки продукта-------------------*/
 
-.linkwork-product {
-}
-
-.linkwork-thumb:hover .linkwork-overlay {
+.linkwork-product:hover .linkwork-overlay {
   opacity: 1;
 }
 .linkwork-thumb:hover::before {
@@ -635,12 +683,10 @@ img {
   transform: translatey(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.linkwork-thumb:hover .linkwork-product-overlay {
+.linkwork-product:hover .linkwork-product-overlay {
   transform: translateY(0);
 }
 
-.linkwork-product-overlay {
-}
 .linkwork-overlay {
   display: flex;
   position: absolute;
